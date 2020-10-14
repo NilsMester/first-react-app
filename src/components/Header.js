@@ -1,12 +1,12 @@
 import React from 'react';
-import "./Header.css";
+import HeaderStyling from "./HeaderStyling";
 
 function Header() {
     return (
-        <header>
+        <HeaderStyling>
             <img src="/images/Chili.svg"></img>
             <h1>Mega React 3000</h1>
-        </header>
+        </HeaderStyling>
 
     );
 }

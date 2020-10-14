@@ -1,26 +1,33 @@
 import React, {useState} from 'react';
+import FormStyling from "./FormStyling";
+import TextBodyInput from "./TextBodyInput";
+import ArticleButton from "./ArticleButton";
+import SectionStyling from "./SectionStyling";
+import RegularInput from "./RegularInput";
 
 export default function AddArticleForm({onAddArticleEntry}){
     const [articleTitle, setArticleTitle] = useState("");
     const [articleSubtitle, setArticleSubtitle] = useState("");
     const [articleTextBody, setArticleTextBody] = useState("");
 
-    return <form>
+    return <FormStyling>
+        <SectionStyling>
         <label>
             Title
-            <input value={articleTitle} onChange={event => setArticleTitle(event.target.value)}/>
+            <RegularInput value={articleTitle} onChange={event => setArticleTitle(event.target.value)}/>
         </label>
         <label>
             Subtitle
-            <input value={articleSubtitle} onChange={event => setArticleSubtitle(event.target.value)}/>
+            <RegularInput value={articleSubtitle} onChange={event => setArticleSubtitle(event.target.value)}/>
         </label>
+        </SectionStyling>
         <label>
-            TextBody
-            <input value={articleTextBody} onChange={event => setArticleTextBody(event.target.value)}/>
+            Text
+            <TextBodyInput value={articleTextBody} onChange={event => setArticleTextBody(event.target.value)}/>
         </label>
 
-        <button
-            disabled={articleTitle.length === 0 && articleSubtitle.length === 0 && articleTextBody.length === 0}
+        <ArticleButton
+            disabled={articleTitle.length === 0 || articleSubtitle.length === 0 || articleTextBody.length === 0}
             onClick={() => {
                 onAddArticleEntry({id: articleTitle.length+1, articleTitle, articleSubtitle, articleTextBody});
                 setArticleTitle("");
@@ -28,9 +35,9 @@ export default function AddArticleForm({onAddArticleEntry}){
                 setArticleTextBody("");
             }}>
             Create Article
-    </button>
+    </ArticleButton>
 
 
 
-    </form>
+    </FormStyling>
 }

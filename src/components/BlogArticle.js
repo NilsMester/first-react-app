@@ -1,20 +1,23 @@
 import React from "react";
-import LikeButton from "./LikeButton";
+import LikeSection from "./LikeSection";
+import ArticleStyling from "./ArticleStyling";
+import SectionStyling from "./SectionStyling";
+import BlogThumbnail from "./BlogThumbnail";
 
 function BlogArticle ({article}){
     const { articleTitle, articleSubtitle, articleTextBody } = article;
 
     return (
         <div>
-            <article>
-                <section>
+            <ArticleStyling>
+                <SectionStyling>
                     <h2>{articleTitle}</h2>
                     <h3>{articleSubtitle}</h3>
                     <p>{articleTextBody}</p>
-                    <LikeButton></LikeButton>
-                </section>
-                <img className="blog-thumbnail" src="/images/oldman.jpg"></img>
-            </article>
+                    <LikeSection></LikeSection>
+                </SectionStyling>
+                <BlogThumbnail src="/images/oldman.jpg"></BlogThumbnail>
+            </ArticleStyling>
         </div>
     );
 }

@@ -1,8 +1,7 @@
-import "./Body.css";
 import React, { useState } from 'react';
 import BlogArticle from "./BlogArticle";
 import AddArticleForm from "./AddArticleForm";
-import articleArray from "./ArticleArray";
+
 
 
 function Body() {

@@ -1,12 +1,12 @@
 import React from 'react';
-import "./Footer.css";
+import FooterStyling from "./FooterStyling";
 
 function Footer() {
     return (
-        <footer>
+        <FooterStyling>
             <img src="images/oldman.jpg" alt="Picture of an old man"></img>
             <p>I made this in 2020</p>
-        </footer>
+        </FooterStyling>
 
     );
 }

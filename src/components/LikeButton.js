@@ -1,15 +1,13 @@
 import React, {useState} from "react";
+import styled, { css } from 'styled-components';
 
-function LikeButton(){
 
-    const [count, setCount] = useState(0);
-
-    return(
-        <div>
-            <button className="button" onClick={() => setCount(count + 1)}>Like</button>
-            <p className="LikeCounter">{count} Likes</p>
-        </div>
-    )
-}
-
+const LikeButton = styled.button`
+    border-radius: 30px;
+    background-color: rgb(253,72,72);
+    border: transparent;
+    color: white;
+    font-weight: bold;
+    padding: 10px 20px;
+`
 export default LikeButton;
